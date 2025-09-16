@@ -1,0 +1,67 @@
+/* src/pages/About.css */
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 80px 10%;
+  min-height: 100vh;
+  background-color: #0c0e27;
+  color: white;
+}
+
+.about-content {
+  flex: 1;
+  max-width: 50%;
+}
+
+.about-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.about-image {
+  flex: 1;
+  max-width: 50%;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* Optional: adds rounded corners to the image */
+}
+/* src/pages/Services.css, About.css, etc. */
+
+.service-item, .about-container {
+  /* Existing desktop styles */
+  display: flex;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .service-item, .about-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+}
+/* Common for multi-column sections */
+@media (max-width: 768px) {
+  .service-item, .about-container {
+    flex-direction: column; /* Stack columns vertically */
+  }
+}
+
+/* For the Training page course grid */
+@media (max-width: 768px) {
+  .courses-grid {
+    grid-template-columns: 1fr; /* One column on mobile */
+  }
+}

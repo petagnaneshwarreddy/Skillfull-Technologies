@@ -1,0 +1,100 @@
+/* src/components/Navbar.css */
+
+/* --- Desktop Styles (for screens > 768px) --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #091f4f; /* Corrected background color */
+  color: white;
+  padding: 1rem 2rem;
+  /* Additional styles for responsiveness */
+  position: relative; /* For positioning the mobile menu */
+}
+
+.navbar-logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 80px;
+  width: 100px;
+  margin-right: 10px;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  margin-left: 2rem;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.navbar-links a:hover {
+  text-decoration: underline;
+}
+
+/* Hamburger menu button (hidden on desktop) */
+.hamburger-menu {
+  display: none; /* Hide on large screens */
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* --- Mobile Styles (for screens <= 768px) --- */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-logo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Show the hamburger menu button */
+  .hamburger-menu {
+    display: block;
+  }
+
+  /* Stack the links vertically and hide them by default */
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+  }
+
+  /* Show links when the 'show' class is added with JavaScript */
+  .navbar-links.show {
+    height: auto;
+    padding: 1rem 0;
+  }
+
+  .navbar-links li {
+    margin: 0.5rem 0;
+  }
+}

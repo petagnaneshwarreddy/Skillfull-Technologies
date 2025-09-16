@@ -1,0 +1,79 @@
+/* src/pages/Contact.css */
+
+.contact-container {
+  background-color: #0c0e27;
+  color: white;
+  padding: 50px 10%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-main {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.company-info h2 {
+  font-size: 2rem;
+  margin-left: 10px;
+}
+
+.company-info p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.quick-links h3, .get-in-touch h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.quick-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.quick-links li {
+  margin-bottom: 10px;
+}
+
+.quick-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.get-in-touch input, .get-in-touch textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #333;
+  background-color: #1a1c36;
+  color: white;
+  border-radius: 5px;
+}
+
+.send-message-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.contact-footer {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+}

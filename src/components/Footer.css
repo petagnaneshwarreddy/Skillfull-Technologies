@@ -1,0 +1,93 @@
+/* src/components/Footer.css */
+
+.contact-container {
+  background-color: #0c0e27;
+  color: white;
+  padding: 50px 10%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-main {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* Updated styles for the company logo section */
+.company-logo {
+  display: flex; /* Use flexbox to align children */
+  align-items: center; /* Vertically center the logo and text */
+  margin-bottom: 20px;
+}
+
+.company-logo img {
+  width: 120px; /* Adjust this value to change the logo size */
+  height: 100px; /* Maintain aspect ratio */
+  margin-right: 15px; /* Add space between the logo and text */
+}
+
+.company-logo h2 {
+  font-size: 1.8rem;
+  margin: 0; /* Remove default margin to ensure clean alignment */
+}
+/* End of updated section */
+
+.company-logo p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.quick-links h3, .get-in-touch h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.quick-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.quick-links li {
+  margin-bottom: 10px;
+}
+
+.quick-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.get-in-touch input, .get-in-touch textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #333;
+  background-color: #1a1c36;
+  color: white;
+  border-radius: 5px;
+}
+
+.send-message-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  width: 200px;
+  cursor: pointer;
+}
+
+.contact-footer {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+}

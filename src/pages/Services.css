@@ -1,0 +1,111 @@
+/* src/pages/Services.css */
+
+.services-container {
+  background-color: #0c0e27;
+  color: white;
+  padding: 50px 10%;
+  min-height: 100vh;
+}
+
+.services-intro {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.services-intro h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.services-intro p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 10px auto;
+}
+
+/* Common styling for service sections */
+.service-item {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 80px;
+}
+
+.service-item h3 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.service-item h4 {
+  font-size: 1rem;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.service-details {
+  flex: 1;
+}
+
+.service-description, .service-approach {
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.service-icon img {
+  width: 150px;
+  height: auto;
+}
+
+/* Alternating layout classes */
+.left-aligned {
+  flex-direction: row;
+}
+
+.right-aligned {
+  flex-direction: row-reverse;
+}
+
+/* Tech list styling */
+.tech-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.tech-list li {
+  background-color: #1a1c36;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+/* src/pages/Services.css, About.css, etc. */
+
+.service-item, .about-container {
+  /* Existing desktop styles */
+  display: flex;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .service-item, .about-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+}
+/* Common for multi-column sections */
+@media (max-width: 768px) {
+  .service-item, .about-container {
+    flex-direction: column; /* Stack columns vertically */
+  }
+}
+
+/* For the Training page course grid */
+@media (max-width: 768px) {
+  .courses-grid {
+    grid-template-columns: 1fr; /* One column on mobile */
+  }
+}

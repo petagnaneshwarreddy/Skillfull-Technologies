@@ -1,0 +1,145 @@
+/* src/pages/Training.css */
+
+.training-container {
+  background-color: #0c0e27;
+  color: white;
+  padding: 50px 10%;
+  min-height: 100vh;
+}
+
+/* Banner Section */
+.training-banner {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.training-banner h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.training-banner p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+/* Internships Section */
+.internships-section {
+  background-color: #1a1c36;
+  padding: 40px;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+
+.internships-section h2 {
+  color: #007bff;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.section-description {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.internships-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.internships-list li {
+  margin-bottom: 10px;
+}
+
+/* Courses Section */
+.courses-section h2.courses-heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.course-card {
+  background-color: #1a1c36;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.course-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  margin-bottom: 15px;
+  color: #007bff; /* This color is for Font Awesome icons */
+  font-size: 3rem; /* This size is for Font Awesome icons */
+}
+
+.course-icon img {
+  width: 60px;
+  height: 60px;
+  max-width: 100%;
+}
+
+.course-card h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.course-card p {
+  color: #ccc;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.course-topics {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.course-topics li {
+  position: relative;
+  margin-bottom: 5px;
+  padding-left: 20px;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.course-topics li::before {
+  content: "»";
+  margin-right: 10px;
+  color: #007bff;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .courses-grid {
+    grid-template-columns: 1fr; /* One column on small screens */
+  }
+}
+/* Common for multi-column sections */
+@media (max-width: 768px) {
+  .service-item, .about-container {
+    flex-direction: column; /* Stack columns vertically */
+  }
+}
+
+/* For the Training page course grid */
+@media (max-width: 768px) {
+  .courses-grid {
+    grid-template-columns: 1fr; /* One column on mobile */
+  }
+}

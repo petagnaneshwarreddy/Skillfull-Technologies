@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import './CourseForm.css';
+import { v4 as uuidv4 } from 'uuid'; // Import the uuid library
 
 const CourseForm = ({ courseTitle, onClose }) => {
   const [showModal, setShowModal] = useState(false);
@@ -30,9 +31,13 @@ const CourseForm = ({ courseTitle, onClose }) => {
     e.preventDefault();
     setStatus('Submitting...'); // Show submitting message
     
-    // Create an object with the course title and form data
+    // Generate a unique, random certificate ID
+    const certificateId = uuidv4();
+    
+    // Create an object with the course title, form data, and the new certificate ID
     const enrollmentData = {
       courseTitle: courseTitle,
+      certificateId: certificateId, // Add the certificate ID here
       ...formData
     };
 
@@ -71,7 +76,6 @@ const CourseForm = ({ courseTitle, onClose }) => {
       <div className="form-modal-content">
         <button className="close-btn" onClick={handleClose}>&times;</button>
         
-        {/* Conditional rendering for the message and form */}
         {!isSubmitted ? (
           <>
             <h2>Enroll in {courseTitle}</h2>
@@ -102,7 +106,6 @@ const CourseForm = ({ courseTitle, onClose }) => {
           </div>
         )}
         
-        {/* Show a status message during submission */}
         {status && <p className="status-message-text">{status}</p>}
       </div>
     </div>

@@ -1,13 +1,11 @@
-// src/pages/CourseForm.js
-
 import React, { useState, useEffect } from 'react';
 import './CourseForm.css';
 import { v4 as uuidv4 } from 'uuid'; // Import the uuid library
 
 const CourseForm = ({ courseTitle, onClose }) => {
   const [showModal, setShowModal] = useState(false);
-  const [status, setStatus] = useState(''); // New state for status message
-  const [isSubmitted, setIsSubmitted] = useState(false); // New state to check if submitted
+  const [status, setStatus] = useState('');
+  const [isSubmitted, setIsSubmitted] = useState(false);
   
   const [formData, setFormData] = useState({
     fullName: '',
@@ -29,20 +27,18 @@ const CourseForm = ({ courseTitle, onClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus('Submitting...'); // Show submitting message
+    setStatus('Submitting...');
     
-    // Generate a unique, random certificate ID
     const certificateId = uuidv4();
     
-    // Create an object with the course title, form data, and the new certificate ID
     const enrollmentData = {
       courseTitle: courseTitle,
-      certificateId: certificateId, // Add the certificate ID here
+      certificateId: certificateId,
       ...formData
     };
 
     try {
-      // const response = await fetch('https://backend-2-hnlp.onrender.com/api/enroll', { 
+      // Use the correct Render URL for POST requests
       const response = await fetch('https://backend-4138.onrender.com/api/enroll', { 
         method: 'POST',
         headers: {
@@ -55,7 +51,7 @@ const CourseForm = ({ courseTitle, onClose }) => {
       
       if (response.ok) {
         setStatus('Successfully submitted! We will contact you soon.');
-        setIsSubmitted(true); // Set state to show success message
+        setIsSubmitted(true);
       } else {
         setStatus(`Error: ${result.msg}`);
       }

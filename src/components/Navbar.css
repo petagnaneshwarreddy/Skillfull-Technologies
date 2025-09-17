@@ -48,6 +48,22 @@
   text-decoration: underline;
 }
 
+/* Styles for the Verify Certificate button */
+.navbar-links .verify-btn {
+  background-color: transparent; /* Makes the button transparent */
+  color: white; /* Ensures the text is white */
+  border: 1px solid white; /* Adds a subtle border to make it look like a button */
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.navbar-links .verify-btn:hover {
+  background-color: white;
+  color: #091f4f; /* Text color changes on hover */
+  text-decoration: none;
+}
+
 /* Hamburger menu button (hidden on desktop) */
 .hamburger-menu {
   display: none; /* Hide on large screens */
@@ -97,26 +113,11 @@
   .navbar-links li {
     margin: 0.5rem 0;
   }
-}
-/* src/components/Navbar.css */
 
-.verify-btn {
-  background-color: #007bff; /* Example blue color */
-  color: #fff;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.verify-btn:hover {
-  background-color: #0056b3; /* Darker shade on hover */
-}
-
-/* Ensure the button aligns with other list items */
-.navbar-links li {
-  list-style: none;
-  display: inline-block;
-  margin-left: 20px;
+  .navbar-links .verify-btn {
+    border: none; /* Remove border on mobile for a cleaner look */
+    background-color: transparent;
+    padding: 0;
+    margin-top: 0.5rem;
+  }
 }

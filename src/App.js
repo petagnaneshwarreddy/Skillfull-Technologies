@@ -7,8 +7,11 @@ import Home from './pages/Home';
 import Services from './pages/Services';
 import Training from './pages/Training';
 import About from './pages/About';
-// Remove the Contact import
 import Footer from './components/Footer';
+
+// New Imports for the new pages
+import Contact from './pages/Contact'; 
+import Verify from './pages/Verify';   
 
 function App() {
   return (
@@ -19,7 +22,9 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/training" element={<Training />} />
         <Route path="/about" element={<About />} />
-        {/* Remove the Contact route */}
+        {/* New routes for the Verify and Contact pages */}
+        <Route path="/verify" element={<Verify />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </>

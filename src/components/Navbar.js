@@ -31,8 +31,14 @@ const Navbar = () => {
         <li><Link to="/" onClick={toggleMobileMenu}>Home</Link></li>
         <li><Link to="/services" onClick={toggleMobileMenu}>Services</Link></li>
         <li><Link to="/training" onClick={toggleMobileMenu}>Training</Link></li>
+        <li>
+          {/* Add the new Verify Certificate button */}
+          <Link to="/verify" className="verify-btn" onClick={toggleMobileMenu}>
+            Verify Certificate
+          </Link>
+        </li>
         <li><Link to="/about" onClick={toggleMobileMenu}>About</Link></li>
-        <li><a href="#contact-form" onClick={toggleMobileMenu}>Contact Us</a></li>
+        <li><Link to="/contact" onClick={toggleMobileMenu}>Contact Us</Link></li>
       </ul>
     </nav>
   );

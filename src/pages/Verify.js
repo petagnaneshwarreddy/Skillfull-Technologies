@@ -22,7 +22,7 @@ const Verify = () => {
     setEnrollmentDetails(null);
 
     try {
-      const response = await fetch(`https://backend-4138.onrender.com/api/verify/${certificateId}`); 
+      const response = await fetch(`https://backend-2-hnlp.onrender.com/api/verify/${certificateId}`); 
       const result = await response.json();
 
       // ✅ Change here: Check if the result has the custom 'msg' field

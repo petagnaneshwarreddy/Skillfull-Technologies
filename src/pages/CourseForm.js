@@ -42,7 +42,8 @@ const CourseForm = ({ courseTitle, onClose }) => {
     };
 
     try {
-      const response = await fetch('https://backend-2-hnlp.onrender.com/api/enroll', { 
+      // const response = await fetch('https://backend-2-hnlp.onrender.com/api/enroll', { 
+      const response = await fetch('https://backend-4138.onrender.com/api/enroll', { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

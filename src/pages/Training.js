@@ -5,12 +5,12 @@ import './Training.css';
 import CourseForm from './CourseForm'; // Import the form component
 
 // Import all the course icons
-import fullstackIcon from '../images/fullstack.png';
-import aiIcon from '../images/ai.png';
+import fullstackIcon from '../images/full.png';
+import aiIcon from '../images/aii.png';
 import cloudIcon from '../images/cloud.png';
-import javaIcon from '../images/java.png';
-import pythonIcon from '../images/python.png';
-import uiuxIcon from '../images/uiux.png';
+import javaIcon from '../images/java (2).png';
+import pythonIcon from '../images/py.png';
+import uiuxIcon from '../images/ui.png';
 
 const Training = () => {
   // State to manage the selected course for the form

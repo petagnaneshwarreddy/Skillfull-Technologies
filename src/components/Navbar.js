@@ -24,13 +24,13 @@ const Navbar = () => {
       </button>
 
       <ul className={`navbar-links ${isMobileMenuOpen ? 'show' : ''}`}>
-        <li><Link to="/" onClick={toggleMobileMenu}>Home</Link></li>
-        <li><Link to="/services" onClick={toggleMobileMenu}>Services</Link></li>
-        <li><Link to="/training" onClick={toggleMobileMenu}>Training</Link></li>
-        <li><Link to="/about" onClick={toggleMobileMenu}>About</Link></li>
-        <li><Link to="/contact" onClick={toggleMobileMenu}>Contact Us</Link></li>
+        <li><Link to="/" onClick={toggleMobileMenu} data-icon="home">Home</Link></li>
+        <li><Link to="/services" onClick={toggleMobileMenu} data-icon="services">Services</Link></li>
+        <li><Link to="/training" onClick={toggleMobileMenu} data-icon="training">Training</Link></li>
+        <li><Link to="/about" onClick={toggleMobileMenu} data-icon="about">About</Link></li>
+        <li><Link to="/contact" onClick={toggleMobileMenu} data-icon="contact">Contact Us</Link></li>
         <li>
-          <Link to="/verify" className="verify-btn" onClick={toggleMobileMenu}>
+          <Link to="/verify" className="verify-btn" onClick={toggleMobileMenu} data-icon="verify">
             Verify Certificate
           </Link>
         </li>

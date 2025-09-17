@@ -1,16 +1,21 @@
 /* src/pages/Training.css */
 
+/* === MAIN CONTAINER === */
 .training-container {
   background-color: #0c0e27;
   color: white;
   padding: 50px 10%;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
-/* Banner Section */
+/* === BANNER SECTION === */
 .training-banner {
   text-align: center;
   margin-bottom: 50px;
+  transform: translateY(40px);
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
 }
 
 .training-banner h1 {
@@ -21,14 +26,19 @@
 .training-banner p {
   font-size: 1.2rem;
   color: #ccc;
+  margin-top: 10px;
 }
 
-/* Internships Section */
+/* === INTERNSHIPS SECTION === */
 .internships-section {
   background-color: #1a1c36;
   padding: 40px;
   border-radius: 10px;
   margin-bottom: 50px;
+  transform: translateY(40px);
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.4s;
 }
 
 .internships-section h2 {
@@ -40,6 +50,7 @@
 .section-description {
   line-height: 1.6;
   margin-bottom: 20px;
+  color: #ccc;
 }
 
 .internships-list {
@@ -49,45 +60,74 @@
 
 .internships-list li {
   margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+  color: #ddd;
 }
 
-/* Courses Section */
+.internships-list li::before {
+  content: "✓";
+  color: #00d4ff;
+  position: absolute;
+  left: 0;
+}
+
+/* === COURSES SECTION === */
 .courses-section h2.courses-heading {
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 30px;
+  transform: translateY(40px);
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.6s;
 }
 
 .courses-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 25px;
+  perspective: 1000px; /* Enable 3D effects */
 }
 
+/* === COURSE CARD === */
 .course-card {
   background-color: #1a1c36;
   padding: 25px;
-  border-radius: 10px;
+  border-radius: 15px;
   text-align: center;
+  height: 450px;
+  transform: rotateY(15deg) translateY(50px);
+  opacity: 0;
+  animation: popInCard 1s ease-out forwards;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
+  will-change: transform;
 }
 
+.course-card:hover {
+  transform: rotateY(0deg) scale(1.05);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* === COURSE ICON === */
 .course-icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80px;
-  margin-bottom: 15px;
-  color: #007bff; /* This color is for Font Awesome icons */
-  font-size: 3rem; /* This size is for Font Awesome icons */
+  height: 120px;
+  margin-bottom: 20px;
 }
 
 .course-icon img {
-  width: 120px;
-  height: 100px;
-  max-width: 100%;
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  transform: translateZ(20px);
 }
 
+/* === COURSE CONTENT === */
 .course-card h3 {
   font-size: 1.5rem;
   font-weight: bold;
@@ -96,23 +136,30 @@
 
 .course-card p {
   color: #ccc;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   line-height: 1.5;
   margin-bottom: 15px;
 }
 
+/* === TOPICS LIST === */
 .course-topics {
   list-style: none;
   padding: 0;
   text-align: left;
+  margin-top: 10px;
 }
 
 .course-topics li {
   position: relative;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   padding-left: 20px;
   color: #ccc;
   font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.course-topics li:hover {
+  color: #ffffff;
 }
 
 .course-topics li::before {
@@ -124,22 +171,45 @@
   top: 0;
 }
 
-/* Mobile styles */
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
   .courses-grid {
-    grid-template-columns: 1fr; /* One column on small screens */
+    grid-template-columns: 1fr;
   }
-}
-/* Common for multi-column sections */
-@media (max-width: 768px) {
-  .service-item, .about-container {
-    flex-direction: column; /* Stack columns vertically */
+
+  .course-card {
+    transform: none !important;
+    animation: none !important;
+    opacity: 1;
+  }
+
+  .training-banner,
+  .internships-section {
+    transform: none !important;
+    animation: none !important;
+    opacity: 1;
   }
 }
 
-/* For the Training page course grid */
-@media (max-width: 768px) {
-  .courses-grid {
-    grid-template-columns: 1fr; /* One column on mobile */
+/* === ANIMATIONS === */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes popInCard {
+  from {
+    transform: rotateY(25deg) translateY(60px);
+    opacity: 0;
+  }
+  to {
+    transform: rotateY(0deg) translateY(0);
+    opacity: 1;
   }
 }

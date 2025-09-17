@@ -50,18 +50,32 @@ const Contact = () => {
       <div className="contact-main">
         {/* Company Info Section */}
         <div className="contact-section company-info">
-          <div className="company-logo">
-            <img src={logo} alt="Skillfull Technologies Logo" />
+          <div className="company-logo" style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '15px' }}>
+            <img src={logo} alt="Skillfull Technologies Logo" style={{ width: '60px', height: '60px', objectFit: 'contain' }} />
             <h2>SkillfullTech</h2>
           </div>
           <p>
             A forward-thinking IT company dedicated to delivering innovative technology solutions to businesses worldwide.
           </p>
-          <div className="social-icons">
-            {/* You'll need Font Awesome for these icons */}
-            <a href="#"><i className="fab fa-linkedin"></i></a>
-            <a href="#"><i className="fab fa-twitter"></i></a>
-            <a href="#"><i className="fab fa-instagram"></i></a>
+          <div style={{ marginTop: '20px' }}>
+            <h4>HeadQuarters:</h4>
+            <p>800 N King Street Suite 304 Wilmington, DE 19801, USA</p>
+            <h4>Corporate Office:</h4>
+            <p>SY:11 WeWork, Krishe Emerald, Laxmi Cyber City, Kondapur Main Road, Whitefields, Serilingampalle (M), Hyderabad, Telangana 500081</p>
+            <p><strong>Phone:</strong> +1 (470) 929-7399</p>
+            <p><strong>Email:</strong> <a href="mailto:info@caviustechnologies.com" style={{color: '#007bff', textDecoration: 'underline'}}>info@caviustechnologies.com</a></p>
+          </div>
+
+          <div className="social-icons" style={{ marginTop: '25px' }}>
+            <a href="https://www.linkedin.com/company/skillfulltech" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style={{ marginRight: '15px', fontSize: '1.5rem', color: '#0077b5' }}>
+              <i className="fab fa-linkedin"></i>
+            </a>
+            <a href="https://twitter.com/skillfulltech" target="_blank" rel="noopener noreferrer" aria-label="Twitter" style={{ marginRight: '15px', fontSize: '1.5rem', color: '#1DA1F2' }}>
+              <i className="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/skillfulltech" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style={{ fontSize: '1.5rem', color: '#E1306C' }}>
+              <i className="fab fa-instagram"></i>
+            </a>
           </div>
         </div>
 

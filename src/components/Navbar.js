@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-import logo from '../images/logoo.png';
+import logo from '../images/logo.png';
 
 const Navbar = () => {
   // State to manage the mobile menu's open/close status

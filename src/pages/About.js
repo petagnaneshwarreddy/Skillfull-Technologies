@@ -2,7 +2,7 @@
 
 import React from 'react';
 import './About.css'; // For styling
-import teamImage from '../images/logoo.png'; // Path to your team image
+import teamImage from '../images/logo.png'; // Path to your team image
 
 const About = () => {
   return (

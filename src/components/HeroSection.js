@@ -9,7 +9,7 @@ const HeroSection = () => {
         <h4>WE ARE THE BEST</h4>
         <h1>Best IT Services Provider <br/> Our Skillfull Technologies <br/> In Our Country.</h1>
         <p>
-          Future proofing digital enterprises from strategy definition to business outcomes scaling digital innovations at speed across the entire enterprise footprint.
+          Future proofing digital enterprises from strategy definition to business outcomes scaling digital innovations at speed across the entire enterprise footprint...
         </p>
         <div className="cta-buttons">
           <button className="free-quote-btn">Free Quote →</button>

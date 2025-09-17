@@ -22,8 +22,8 @@ const Verify = () => {
     setEnrollmentDetails(null);
 
     try {
-      // Use the live URL of your deployed Render backend
-      const response = await fetch(`https://backend-2-hnlp.onrender.com/api/verify/${certificateId}`); 
+      // Use the new, correct Render backend URL
+      const response = await fetch(`https://backend-4138.onrender.com/api/verify/${certificateId}`); 
       const result = await response.json();
 
       if (response.ok) {

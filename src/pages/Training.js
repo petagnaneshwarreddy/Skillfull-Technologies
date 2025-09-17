@@ -6,10 +6,10 @@ import CourseForm from './CourseForm'; // Import the form component
 
 // Import all the course icons
 import fullstackIcon from '../images/logo.png';
-import aiIcon from '../images/logo.png';
-import cloudIcon from '../images/logo.png';
-import javaIcon from '../images/logo.png';
-import pythonIcon from '../images/logo.png';
+import aiIcon from '../images/ai.png';
+import cloudIcon from '../images/cloud.png';
+import javaIcon from '../images/java.png';
+import pythonIcon from '../images/python.png';
 import uiuxIcon from '../images/logo.png';
 
 const Training = () => {

@@ -1,0 +1,107 @@
+/* src/pages/Verify.css */
+
+.verify-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background-color: #0d1a29; /* Dark background to match the theme */
+  color: #f0f0f0;
+  min-height: calc(100vh - 80px); /* Adjust based on navbar/footer height */
+  text-align: center;
+}
+
+.verify-container h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #e0e0e0;
+}
+
+.verify-container p {
+  font-size: 1.1rem;
+  color: #c0c0c0;
+  margin-bottom: 2rem;
+}
+
+.verify-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.verify-form input {
+  padding: 0.75rem;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #1e2a3a;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.verify-form input:focus {
+  border-color: #6a82fb;
+}
+
+.verify-form button {
+  padding: 0.75rem;
+  background-color: #6a82fb; /* Button color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.verify-form button:hover {
+  background-color: #4a62e0;
+}
+
+.status-message {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffcc00; /* Yellow for status messages */
+}
+
+.certificate-details {
+  background-color: #1e2a3a;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 600px;
+  text-align: left;
+}
+
+.certificate-details h2 {
+  font-size: 1.8rem;
+  color: #6a82fb;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #6a82fb;
+  padding-bottom: 0.5rem;
+}
+
+.certificate-details p {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+}
+
+.certificate-details strong {
+  color: #f0f0f0;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .verify-container {
+    padding: 2rem 1rem;
+  }
+}

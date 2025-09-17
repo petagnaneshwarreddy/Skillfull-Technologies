@@ -1,3 +1,5 @@
+// src/pages/Verify.js
+
 import React, { useState } from 'react';
 import './Verify.css';
 
@@ -12,26 +14,23 @@ const Verify = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
     if (!certificateId.trim()) {
       setStatus('Please enter a certificate ID.');
       return;
     }
-
     setStatus('Verifying...');
     setEnrollmentDetails(null);
 
     try {
-      // Use the new, correct Render backend URL
       const response = await fetch(`https://backend-4138.onrender.com/api/verify/${certificateId}`); 
       const result = await response.json();
 
-      if (response.ok) {
+      // ✅ Change here: Check if the result has the custom 'msg' field
+      if (result.msg) {
+        setStatus(`Error: ${result.msg}`);
+      } else {
         setEnrollmentDetails(result); 
         setStatus('Verification successful!');
-      } else {
-        setEnrollmentDetails(null);
-        setStatus(`Error: ${result.msg}`);
       }
     } catch (error) {
       console.error('Verification failed:', error);

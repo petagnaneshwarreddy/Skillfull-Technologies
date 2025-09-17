@@ -7,7 +7,7 @@ import Training from './pages/Training';
 import About from './pages/About';
 import Contact from './pages/Contact'; 
 import Verify from './pages/Verify';   
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/verify" element={<Verify />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

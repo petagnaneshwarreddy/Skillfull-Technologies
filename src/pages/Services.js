@@ -2,10 +2,10 @@
 
 import React from 'react';
 import './Services.css'; // For styling
-import aiIcon from '../images/logo.png';
-import mobileIcon from '../images/logo.png'; // Assume you have these icon files
-import cloudIcon from '../images/logo.png';
-import webDevIcon from '../images/logo.png';
+import aiIcon from '../images/aiml.jpg';
+import mobileIcon from '../images/app.jpg'; // Assume you have these icon files
+import cloudIcon from '../images/cloud.jpg';
+import webDevIcon from '../images/web.avif';
 
 const Services = () => {
   return (

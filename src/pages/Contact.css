@@ -1,155 +1,93 @@
-/* === MAIN CONTAINER === */
-.about-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 60px;
-  padding: 80px 10%;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #0c0e27, #14153c);
+/* src/components/Footer.css */
+
+.contact-container {
+  background-color: #0c0e27;
   color: white;
-  overflow-x: hidden;
+  padding: 50px 10%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-main {
+  display: flex;
+  gap: 50px;
   flex-wrap: wrap;
-  animation: fadeInUp 1s ease-out forwards;
-  perspective: 1200px; /* enhance 3D effect for children */
+  justify-content: space-between;
 }
 
-/* === TEXT CONTENT === */
-.about-content {
+.contact-section {
   flex: 1;
-  max-width: 600px;
-  transform-style: preserve-3d;
-  transform: translateY(40px) translateZ(0);
-  opacity: 0;
-  animation: slideTextIn 1.2s ease forwards;
-  animation-delay: 0.2s;
+  min-width: 250px;
 }
 
-.about-content h1 {
-  font-size: 3rem;
-  font-weight: bold;
+/* Updated styles for the company logo section */
+.company-logo {
+  display: flex; /* Use flexbox to align children */
+  align-items: center; /* Vertically center the logo and text */
   margin-bottom: 20px;
-  background: linear-gradient(90deg, #00bfff, #8a2be2, #ff00ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow:
-    0 0 10px #00bfff,
-    0 0 20px #8a2be2,
-    0 0 30px #ff00ff,
-    0 0 40px #ff00ff,
-    0 0 50px #8a2be2;
-  letter-spacing: 1.5px;
 }
 
-.about-content p {
-  line-height: 1.7;
+.company-logo img {
+  width: 120px; /* Adjust this value to change the logo size */
+  height: 100px; /* Maintain aspect ratio */
+  margin-right: 15px; /* Add space between the logo and text */
+}
+
+.company-logo h2 {
+  font-size: 1.8rem;
+  margin: 0; /* Remove default margin to ensure clean alignment */
+}
+/* End of updated section */
+
+.company-logo p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.quick-links h3, .get-in-touch h3 {
+  font-size: 1.5rem;
   margin-bottom: 20px;
-  font-size: 1.1rem;
-  color: #cccccc;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
-  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-.about-content p:hover {
-  color: #ffffff;
-  text-shadow:
-    0 0 10px #00bfff,
-    0 0 15px #8a2be2;
+.quick-links ul {
+  list-style: none;
+  padding: 0;
 }
 
-/* === IMAGE SIDE === */
-.about-image {
-  flex: 1;
-  max-width: 500px;
-  perspective: 1200px;
-  transform-style: preserve-3d;
+.quick-links li {
+  margin-bottom: 10px;
 }
 
-.about-image img {
+.quick-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.get-in-touch input, .get-in-touch textarea {
   width: 100%;
-  height: auto;
-  border-radius: 20px;
-  box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.7),
-    0 0 25px rgba(0, 191, 255, 0.5);
-  transform: rotateY(15deg) rotateX(3deg) scale(0.95);
-  transition: transform 0.6s ease, box-shadow 0.6s ease, filter 0.6s ease;
-  animation: floatInImage 1.4s ease forwards;
-  opacity: 0;
-  filter: brightness(1.1) contrast(1.15);
-  will-change: transform, box-shadow;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #333;
+  background-color: #1a1c36;
+  color: white;
+  border-radius: 5px;
+}
+
+.send-message-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  width: 200px;
   cursor: pointer;
 }
 
-.about-image img:hover {
-  transform: rotateY(0deg) rotateX(0deg) scale(1.08);
-  box-shadow:
-    0 30px 80px rgba(0, 0, 0, 0.85),
-    0 0 35px #00bfff,
-    0 0 50px #8a2be2;
-  filter: brightness(1.25) contrast(1.3);
-  z-index: 10;
-}
-
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-    padding: 50px 5%;
-  }
-
-  .about-content, .about-image {
-    max-width: 100%;
-  }
-
-  .about-image img {
-    transform: none !important;
-    animation: none !important;
-    opacity: 1 !important;
-    filter: none !important;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-    border-radius: 15px;
-    cursor: default;
-  }
-
-  .about-content {
-    animation: none !important;
-    transform: none !important;
-    opacity: 1 !important;
-  }
-}
-
-/* === ANIMATIONS === */
-@keyframes slideTextIn {
-  from {
-    transform: translateY(40px) translateZ(0);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0) translateZ(0);
-    opacity: 1;
-  }
-}
-
-@keyframes floatInImage {
-  from {
-    transform: rotateY(25deg) rotateX(5deg) scale(0.9);
-    opacity: 0;
-  }
-  to {
-    transform: rotateY(15deg) rotateX(3deg) scale(0.95);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    transform: translateY(60px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0px);
-    opacity: 1;
-  }
+.contact-footer {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
 }

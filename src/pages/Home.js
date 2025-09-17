@@ -7,6 +7,7 @@ import Training from './Training';
 import About from './About';
 // Remove the Contact import
 import './Home.css';
+import Contact from './Contact';
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <Services />
       <Training />
       <About />
+      <Contact />
       {/* Remove the Contact component here */}
     </>
   );

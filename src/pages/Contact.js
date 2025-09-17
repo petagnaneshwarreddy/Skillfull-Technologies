@@ -63,17 +63,17 @@ const Contact = () => {
             <h4>Corporate Office:</h4>
             <p>SY:11 WeWork, Krishe Emerald, Laxmi Cyber City, Kondapur Main Road, Whitefields, Serilingampalle (M), Hyderabad, Telangana 500081</p>
             <p><strong>Phone:</strong> +1 (470) 929-7399</p>
-            <p><strong>Email:</strong> <a href="mailto:info@caviustechnologies.com" style={{color: '#007bff', textDecoration: 'underline'}}>info@caviustechnologies.com</a></p>
+            <p><strong>Email:</strong> <a href="skillfulltec@gmail.com" style={{color: '#007bff', textDecoration: 'underline'}}>info@caviustechnologies.com</a></p>
           </div>
 
           <div className="social-icons" style={{ marginTop: '25px' }}>
-            <a href="https://www.linkedin.com/company/skillfulltech" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style={{ marginRight: '15px', fontSize: '1.5rem', color: '#0077b5' }}>
+            <a href="https://www.linkedin.com/company/skillfull-technologies/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style={{ marginRight: '15px', fontSize: '1.5rem', color: '#0077b5' }}>
               <i className="fab fa-linkedin"></i>
             </a>
             <a href="https://twitter.com/skillfulltech" target="_blank" rel="noopener noreferrer" aria-label="Twitter" style={{ marginRight: '15px', fontSize: '1.5rem', color: '#1DA1F2' }}>
               <i className="fab fa-twitter"></i>
             </a>
-            <a href="https://www.instagram.com/skillfulltech" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style={{ fontSize: '1.5rem', color: '#E1306C' }}>
+            <a href="https://www.instagram.com/skillfull_technologies?igsh=NXQ5OXFyZzcxWI5" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style={{ fontSize: '1.5rem', color: '#E1306C' }}>
               <i className="fab fa-instagram"></i>
             </a>
           </div>

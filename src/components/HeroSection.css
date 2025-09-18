@@ -1,31 +1,21 @@
-/* src/components/HeroSection.css */
-
-/* --- Base Styles --- */
 .hero-section {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 5rem 10%;
-  background-color: #0c0e27;
+  background-color: #0c0e27; /* Dark blue background */
   color: white;
   min-height: 80vh;
-  perspective: 1000px; /* Enables 3D effects */
-  overflow: hidden;
 }
 
-/* --- Content Area --- */
 .hero-content {
   flex: 1;
   max-width: 50%;
   padding-right: 2rem;
-  transform: translateY(50px);
-  opacity: 0;
-  animation: fadeInUp 1s ease-out forwards;
-  animation-delay: 0.3s;
 }
 
 .hero-content h4 {
-  color: #007bff;
+  color: #007bff; /* Light blue color for 'WE ARE THE BEST' */
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
@@ -47,7 +37,6 @@
 .cta-buttons {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
 }
 
 .free-quote-btn {
@@ -58,69 +47,44 @@
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
-  transition: transform 0.3s ease;
 }
 
-.free-quote-btn:hover {
-  transform: scale(1.05);
-}
-
-/* --- Image Area --- */
 .hero-image {
   flex: 1;
   max-width: 50%;
   position: relative;
-  transform-style: preserve-3d;
-  transform: rotateY(10deg);
-  transition: transform 0.8s ease;
-  opacity: 0;
-  animation: fadeInRight 1s ease-out forwards;
-  animation-delay: 0.6s;
-}
-
-.hero-image:hover {
-  transform: rotateY(0deg) scale(1.02);
 }
 
 .hero-image img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 10px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  transform: translateZ(30px);
 }
+/* src/components/HeroSection.css */
 
-/* --- Responsive Styles --- */
+.hero-section {
+  /* Existing desktop styles */
+  display: flex;
+}
+/* src/components/HeroSection.css */
+.hero-section {
+  display: flex;
+  flex-direction: row; /* Default for desktop */
+}
 @media (max-width: 768px) {
   .hero-section {
-    flex-direction: column;
+    flex-direction: column; /* Stack vertically on mobile */
     text-align: center;
-    padding: 2rem;
-  }
-
-  .hero-content,
-  .hero-image {
-    max-width: 100%;
-    padding: 0;
-  }
-
-  .cta-buttons {
-    justify-content: center;
   }
 }
-
-/* --- Animations --- */
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column; /* Stack content vertically */
+    text-align: center;
   }
-}
-
-@keyframes fadeInRight {
-  to {
-    opacity: 1;
-    transform: rotateY(0deg);
+  
+  .hero-content, .hero-image {
+    max-width: 100%; /* Make each section full width */
   }
 }

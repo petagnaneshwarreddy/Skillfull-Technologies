@@ -6,23 +6,52 @@ import Services from './pages/Services';
 import Training from './pages/Training';
 import About from './pages/About';
 import Contact from './pages/Contact'; 
-import Verify from './pages/Verify';   
-// import Footer from './components/Footer';
+import Verify from './pages/Verify'; 
+import ExploreCourses from './explore/ExploreCourses';
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/training" element={<Training />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/verify" element={<Verify />} />
-      </Routes>
-      {/* <Footer /> */}
-    </>
+    <Routes>
+      <Route path="/" element={
+        <>
+          <Navbar />
+          <Home />
+        </>
+      } />
+      <Route path="/services" element={
+        <>
+          <Navbar />
+          <Services />
+        </>
+      } />
+      <Route path="/training" element={
+        <>
+          <Navbar />
+          <Training />
+        </>
+      } />
+      <Route path="/about" element={
+        <>
+          <Navbar />
+          <About />
+        </>
+      } />
+      <Route path="/contact" element={
+        <>
+          <Navbar />
+          <Contact />
+        </>
+      } />
+      <Route path="/verify" element={
+        <>
+          <Navbar />
+          <Verify />
+        </>
+      } />
+
+      {/* 👇 catch all nested routes for Explore */}
+      <Route path="/explore/*" element={<ExploreCourses />} />
+    </Routes>
   );
 }
 

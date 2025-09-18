@@ -23,7 +23,7 @@ const Contact = () => {
     setStatus('Submitting...');
     
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://backend-4138.onrender.com/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -63,7 +63,7 @@ const Contact = () => {
             <h4>Corporate Office:</h4>
             <p>SY:11 WeWork, Krishe Emerald, Laxmi Cyber City, Kondapur Main Road, Whitefields, Serilingampalle (M), Hyderabad, Telangana 500081</p>
             <p><strong>Phone:</strong> +1 (470) 929-7399</p>
-            <p><strong>Email:</strong> <a href="skillfulltec@gmail.com" style={{color: '#007bff', textDecoration: 'underline'}}>info@caviustechnologies.com</a></p>
+            <p><strong>Email:</strong> <a href="skillfulltec@gmail.com" style={{color: '#007bff', textDecoration: 'underline'}}>skillfulltec@gmail.com</a></p>
           </div>
 
           <div className="social-icons" style={{ marginTop: '25px' }}>

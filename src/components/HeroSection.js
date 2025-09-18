@@ -12,7 +12,7 @@ const HeroSection = () => {
           Future proofing digital enterprises from strategy definition to business outcomes scaling digital innovations at speed across the entire enterprise footprint...
         </p>
         <div className="cta-buttons">
-          <button className="free-quote-btn">Free Quote →</button>
+          <button className="free-quote-btn">Explore Courses →</button>
           {/* Add a button for the play icon, if you have one */}
         </div>
       </div>

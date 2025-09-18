@@ -1,0 +1,161 @@
+/* src/pages/Verify.css */
+
+.verify-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #0d1a29, #0a1622);
+  color: #f0f0f0;
+  min-height: calc(100vh - 80px);
+  text-align: center;
+
+  /* Fade-in animation */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.verify-container h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #e0e0e0;
+  text-shadow: 0 0 8px rgba(106, 130, 251, 0.7);
+}
+
+.verify-container p {
+  font-size: 1.1rem;
+  color: #c0c0c0;
+  margin-bottom: 2rem;
+}
+
+.verify-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+  background: rgba(30, 42, 58, 0.8);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  transform: perspective(1000px) rotateX(5deg);
+  transition: transform 0.3s ease;
+}
+
+.verify-form:hover {
+  transform: perspective(1000px) rotateX(0deg) scale(1.02);
+}
+
+.verify-form input {
+  padding: 0.75rem;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background-color: #1e2a3a;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
+}
+
+.verify-form input:focus {
+  border-color: #6a82fb;
+  box-shadow: 0 0 10px rgba(106, 130, 251, 0.7);
+  transform: scale(1.03);
+}
+
+.verify-form button {
+  padding: 0.85rem;
+  background: linear-gradient(135deg, #6a82fb, #4a62e0);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(106, 130, 251, 0.4);
+}
+
+.verify-form button:hover {
+  background: linear-gradient(135deg, #4a62e0, #6a82fb);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(106, 130, 251, 0.6);
+}
+
+.status-message {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffcc00;
+  animation: pulse 1.5s infinite;
+}
+
+/* Certificate details card */
+.certificate-details {
+  background: linear-gradient(145deg, #1e2a3a, #141c28);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4),
+              inset 0 0 10px rgba(255, 255, 255, 0.05);
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 600px;
+  text-align: left;
+
+  /* Subtle animation */
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  animation: fadeInUp 1s ease forwards 0.5s;
+}
+
+.certificate-details h2 {
+  font-size: 1.8rem;
+  color: #6a82fb;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #6a82fb;
+  padding-bottom: 0.5rem;
+  text-shadow: 0 0 6px rgba(106, 130, 251, 0.6);
+}
+
+.certificate-details p {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+}
+
+.certificate-details strong {
+  color: #f0f0f0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .verify-container {
+    padding: 2rem 1rem;
+  }
+
+  .verify-form {
+    padding: 1.5rem;
+  }
+
+  .certificate-details {
+    padding: 1.5rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.1); }
+}

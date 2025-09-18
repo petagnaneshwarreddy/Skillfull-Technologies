@@ -1,0 +1,166 @@
+/* src/pages/Services.css */
+
+.services-container {
+  background-color: #0c0e27;
+  color: white;
+  padding: 50px 10%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.services-intro {
+  text-align: center;
+  margin-bottom: 50px;
+  transform: translateY(30px);
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.services-intro h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.services-intro p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 10px auto;
+  color: #ccc;
+}
+
+/* === SERVICE ITEM CONTAINER === */
+.service-item {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 80px;
+  perspective: 1200px; /* Enable 3D child transforms */
+}
+
+/* === TEXT SECTION === */
+.service-details {
+  flex: 1;
+  transform: translateY(40px);
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.service-item:nth-child(even) .service-details {
+  animation-delay: 0.3s;
+}
+
+.service-item h3 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.service-item h4 {
+  font-size: 1rem;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.service-description,
+.service-approach {
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+/* === IMAGE ICON SECTION === */
+.service-icon {
+  flex: 1;
+  transform: rotateY(10deg) translateZ(0);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  opacity: 0;
+  animation: fadeInRight 1s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+.service-icon:hover {
+  transform: rotateY(0deg) scale(1.05);
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.4);
+}
+
+.service-icon img {
+  width: 550px;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+/* === ALTERNATING LAYOUT === */
+.left-aligned {
+  flex-direction: row;
+}
+
+.right-aligned {
+  flex-direction: row-reverse;
+}
+
+/* === TECH LIST STYLING === */
+.tech-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.tech-list li {
+  background-color: #1a1c36;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.tech-list li:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* === MOBILE RESPONSIVE === */
+@media (max-width: 768px) {
+  .service-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .service-details,
+  .service-icon {
+    max-width: 100%;
+    text-align: center;
+    transform: none !important;
+    opacity: 1 !important;
+    animation: none !important;
+  }
+
+  .tech-list {
+    justify-content: center;
+  }
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    transform: rotateY(30deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,143 @@
+/* src/components/Navbar.css */
+
+/* --- Desktop Styles --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #091f4f;
+  color: white;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+.navbar-logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 80px;
+  width: 100px;
+  margin-right: 10px;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  margin-left: 2rem;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+/* --- Icon Styles Using ::before --- */
+.navbar-links a::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+/* Icons via data attributes */
+.navbar-links a[data-icon="home"]::before { content: "\f015"; }
+.navbar-links a[data-icon="services"]::before { content: "\f542"; }
+.navbar-links a[data-icon="training"]::before { content: "\f0c0"; }
+.navbar-links a[data-icon="about"]::before { content: "\f05a"; }
+.navbar-links a[data-icon="contact"]::before { content: "\f0e0"; }
+.navbar-links .verify-btn::before { content: "\f058"; }
+
+/* Hover effects */
+.navbar-links a:hover {
+  text-decoration: underline;
+}
+
+/* Button styling */
+.navbar-links .verify-btn {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.navbar-links .verify-btn:hover {
+  background-color: white;
+  color: #091f4f;
+  text-decoration: none;
+}
+
+/* Hamburger (mobile menu) */
+.hamburger-menu {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* --- Mobile Styles --- */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-logo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+  }
+
+  .navbar-links.show {
+    height: auto;
+    padding: 1rem 0;
+  }
+
+  .navbar-links li {
+    margin: 0.5rem 0;
+  }
+
+  .navbar-links .verify-btn {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin-top: 0.5rem;
+  }
+}

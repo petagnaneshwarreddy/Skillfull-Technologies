@@ -1,0 +1,90 @@
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 10%;
+  background-color: #0c0e27; /* Dark blue background */
+  color: white;
+  min-height: 80vh;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 50%;
+  padding-right: 2rem;
+}
+
+.hero-content h4 {
+  color: #007bff; /* Light blue color for 'WE ARE THE BEST' */
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.free-quote-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.hero-image {
+  flex: 1;
+  max-width: 50%;
+  position: relative;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/* src/components/HeroSection.css */
+
+.hero-section {
+  /* Existing desktop styles */
+  display: flex;
+}
+/* src/components/HeroSection.css */
+.hero-section {
+  display: flex;
+  flex-direction: row; /* Default for desktop */
+}
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column; /* Stack vertically on mobile */
+    text-align: center;
+  }
+}
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column; /* Stack content vertically */
+    text-align: center;
+  }
+  
+  .hero-content, .hero-image {
+    max-width: 100%; /* Make each section full width */
+  }
+}

@@ -1,0 +1,155 @@
+/* src/pages/CourseForm.css */
+
+.form-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  /* Animation styles */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  perspective: 1200px; /* for 3D effect */
+}
+
+/* Show modal */
+.form-modal-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.form-modal-content {
+  background: linear-gradient(145deg, #1a1c36, #0c0e27);
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+
+  /* 3D + animation */
+  transform: scale(0.8) rotateX(-20deg);
+  opacity: 0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.05);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Animate in */
+.form-modal-overlay.show .form-modal-content {
+  transform: scale(1) rotateX(0deg);
+  opacity: 1;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: rotate(90deg) scale(1.2);
+  color: #ff5555;
+}
+
+.form-modal-content h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.8rem;
+  text-shadow: 0 0 8px rgba(0, 123, 255, 0.7);
+}
+
+.form-modal-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-modal-content input, 
+.form-modal-content select {
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #333;
+  background-color: #0c0e27;
+  color: white;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.form-modal-content input:focus, 
+.form-modal-content select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.7);
+  transform: scale(1.03);
+}
+
+.form-modal-content label {
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.form-modal-content button {
+  padding: 15px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+}
+
+.form-modal-content button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.6);
+}
+
+/* Success message styles */
+.status-message {
+  text-align: center;
+  padding: 20px;
+  animation: float 2s ease-in-out infinite; /* floating effect */
+}
+
+.status-message .fa-check-circle {
+  font-size: 3rem;
+  color: #28a745;
+  margin-bottom: 10px;
+  animation: pulse 1.5s infinite;
+}
+
+.status-message h3 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.status-message-text {
+  text-align: center;
+  font-style: italic;
+  margin-top: 10px;
+  color: #ccc;
+}
+
+/* Keyframes for animations */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.7; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}

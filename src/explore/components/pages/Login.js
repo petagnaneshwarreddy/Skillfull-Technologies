@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import './Login.css';
 
-// Define styles for the component
+// Inline styles
 const styles = {
   container: {
     padding: '20px',
     maxWidth: '400px',
-    margin: 'auto',
+    margin: '50px auto',
     textAlign: 'center',
+    fontFamily: 'Arial, sans-serif',
   },
   form: {
     display: 'flex',
@@ -17,6 +19,8 @@ const styles = {
     border: '1px solid #ccc',
     padding: '20px',
     borderRadius: '8px',
+    backgroundColor: '#f9f9f9',
+    boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
   },
   formGroup: {
     display: 'flex',
@@ -24,23 +28,26 @@ const styles = {
     alignItems: 'flex-start',
   },
   input: {
-    width: '100%',
-    padding: '8px',
+    width: '340px',
+    padding: '10px',
     marginTop: '5px',
     border: '1px solid #ccc',
     borderRadius: '4px',
+    fontSize: '14px',
   },
   submitButton: {
-    padding: '10px 20px',
+    padding: '12px 20px',
     backgroundColor: '#007bff',
     color: 'white',
     border: 'none',
     borderRadius: '4px',
     cursor: 'pointer',
+    fontSize: '16px',
   },
   message: {
     marginTop: '20px',
     color: 'red',
+    fontWeight: 'bold',
   },
   linkContainer: {
     marginTop: '15px',
@@ -59,16 +66,24 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setMessage('');
     try {
-      const response = await axios.post('YOUR_BACKEND_URL/login', {
+      const response = await axios.post('https://backend-4138.onrender.com/login', {
         email,
         password,
       });
-      setMessage('Login successful!');
-      // Assuming a successful login redirects to the main home page
-      navigate('/');
+
+      setMessage('Login successful! Redirecting...');
+      if (response.data.token) {
+        localStorage.setItem('token', response.data.token);
+      }
+
+      setTimeout(() => navigate('/'), 1000);
     } catch (error) {
-      setMessage(error.response.data.message || 'Login failed. Invalid credentials.');
+      console.error(error);
+      const errorMsg =
+        error?.response?.data?.message || 'Login failed. Invalid credentials.';
+      setMessage(errorMsg);
     }
   };
 
@@ -78,17 +93,35 @@ const Login = () => {
       <form onSubmit={handleSubmit} style={styles.form}>
         <div style={styles.formGroup}>
           <label htmlFor="email">Email:</label>
-          <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required style={styles.input} />
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            style={styles.input}
+          />
         </div>
         <div style={styles.formGroup}>
           <label htmlFor="password">Password:</label>
-          <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required style={styles.input} />
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            style={styles.input}
+          />
         </div>
-        <button type="submit" style={styles.submitButton}>Login</button>
+        <button type="submit" style={styles.submitButton}>
+          Login
+        </button>
       </form>
       {message && <p style={styles.message}>{message}</p>}
       <div style={styles.linkContainer}>
-        <Link to="/explore/reset-password" style={styles.link}>Forgot Password?</Link>
+        <Link to="/explore/reset-password" style={styles.link}>
+          Forgot Password?
+        </Link>
       </div>
     </div>
   );

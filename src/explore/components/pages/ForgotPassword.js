@@ -27,7 +27,11 @@ const ForgotPassword = () => {
   // Step 2: Verify OTP
   const handleVerifyOtp = async () => {
     try {
-      await axios.post('https://backend-4138.onrender.com/verify-otp', { email, otp });
+      // Backend doesn't have a separate verify-otp route; we just use reset-password
+      if (!otp) {
+        setMessage('Enter the OTP sent to your email.');
+        return;
+      }
       setMessage('OTP verified. Enter new password.');
       setStep(3);
     } catch (err) {
@@ -45,9 +49,10 @@ const ForgotPassword = () => {
     try {
       await axios.post('https://backend-4138.onrender.com/reset-password', {
         email,
+        otp,
         newPassword,
       });
-      setMessage('Password reset successful. You can now login.');
+      setMessage('Password reset successful. Redirecting to login...');
       setTimeout(() => navigate('/login'), 1500);
     } catch (err) {
       console.error(err);
@@ -69,7 +74,7 @@ const ForgotPassword = () => {
             onChange={(e) => setEmail(e.target.value)}
             style={{ width: '100%', padding: '10px', marginBottom: '10px' }}
           />
-          <button onClick={handleSendOtp}>Send OTP</button>
+          <button onClick={handleSendOtp} style={{ padding: '10px 20px' }}>Send OTP</button>
         </>
       )}
 
@@ -82,7 +87,7 @@ const ForgotPassword = () => {
             onChange={(e) => setOtp(e.target.value)}
             style={{ width: '100%', padding: '10px', marginBottom: '10px' }}
           />
-          <button onClick={handleVerifyOtp}>Verify OTP</button>
+          <button onClick={handleVerifyOtp} style={{ padding: '10px 20px' }}>Verify OTP</button>
         </>
       )}
 
@@ -102,7 +107,7 @@ const ForgotPassword = () => {
             onChange={(e) => setConfirmPassword(e.target.value)}
             style={{ width: '100%', padding: '10px', marginBottom: '10px' }}
           />
-          <button onClick={handleResetPassword}>Reset Password</button>
+          <button onClick={handleResetPassword} style={{ padding: '10px 20px' }}>Reset Password</button>
         </>
       )}
     </div>

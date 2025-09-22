@@ -3,7 +3,6 @@ import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import './Login.css';
 
-// Inline styles
 const styles = {
   container: {
     padding: '20px',
@@ -28,7 +27,7 @@ const styles = {
     alignItems: 'flex-start',
   },
   input: {
-    width: '340px',
+    width: '100%',
     padding: '10px',
     marginTop: '5px',
     border: '1px solid #ccc',
@@ -73,13 +72,13 @@ const Login = () => {
         password,
       });
 
-      setMessage('Login successful! Redirecting...');
       if (response.data.token) {
         localStorage.setItem('token', response.data.token);
+        setMessage('Login successful! Redirecting...');
+        setTimeout(() => navigate('/secondnav'), 1000);
+      } else {
+        setMessage('Login failed. No token received.');
       }
-
-      // 🔹 redirect to SecondNav page
-      setTimeout(() => navigate('/secondnav'), 1000);
     } catch (error) {
       console.error(error);
       const errorMsg =
@@ -100,6 +99,7 @@ const Login = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            autoFocus
             style={styles.input}
           />
         </div>

@@ -58,7 +58,7 @@ const styles = {
 };
 
 const Login = () => {
-  const [email, setEmail] = useState('');
+  const [userInput, setUserInput] = useState(''); // username or email
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
@@ -66,9 +66,11 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage('');
+
     try {
+      // Send userInput as "identifier" to backend
       const response = await axios.post('https://backend-4138.onrender.com/login', {
-        email,
+        identifier: userInput,
         password,
       });
 
@@ -92,12 +94,12 @@ const Login = () => {
       <h2>Login</h2>
       <form onSubmit={handleSubmit} style={styles.form}>
         <div style={styles.formGroup}>
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="userInput">Username or Email:</label>
           <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            type="text"
+            id="userInput"
+            value={userInput}
+            onChange={(e) => setUserInput(e.target.value)}
             required
             autoFocus
             style={styles.input}

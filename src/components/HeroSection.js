@@ -8,7 +8,7 @@ const HeroSection = () => {
 
   const handleExploreClick = () => {
     // This path must match the one you defined in App.js
-    navigate('/explore'); 
+    navigate('/explore/login'); 
   };
 
   return (

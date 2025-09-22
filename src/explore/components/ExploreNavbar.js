@@ -23,7 +23,7 @@ const ExploreNavbar = () => {
 
       <ul className="nav-list">
         {[
-          { to: '/explore', label: 'Courses' },
+          // { to: '/explore', label: 'Compiler' },
           { to: '/explore/login', label: 'Login' },
           { to: '/explore/register', label: 'Register' },
         ].map((item) => (

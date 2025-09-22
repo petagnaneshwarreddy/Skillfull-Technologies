@@ -8,7 +8,7 @@ const SecondNav = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('token');
-    navigate('/login'); // redirect back to login
+    navigate('/'); // redirect back to login
   };
 
   return (

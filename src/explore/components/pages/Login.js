@@ -78,7 +78,8 @@ const Login = () => {
         localStorage.setItem('token', response.data.token);
       }
 
-      setTimeout(() => navigate('/'), 1000);
+      // 🔹 redirect to SecondNav page
+      setTimeout(() => navigate('/secondnav'), 1000);
     } catch (error) {
       console.error(error);
       const errorMsg =
